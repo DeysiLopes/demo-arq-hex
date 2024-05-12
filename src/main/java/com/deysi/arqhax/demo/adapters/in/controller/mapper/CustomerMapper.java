@@ -1,6 +1,7 @@
 package com.deysi.arqhax.demo.adapters.in.controller.mapper;
 
 import com.deysi.arqhax.demo.adapters.in.controller.request.CustomerRequest;
+import com.deysi.arqhax.demo.adapters.in.controller.response.CustomerResponse;
 import com.deysi.arqhax.demo.application.core.domain.Customer;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -12,4 +13,6 @@ public interface CustomerMapper {
     @Mapping(target = "address", ignore = true)
     @Mapping(target = "isValidCpf", ignore = true)
     Customer toCustomer(CustomerRequest customerRequest);
+
+    CustomerResponse toCustomerResponse(Customer customer );
 }
