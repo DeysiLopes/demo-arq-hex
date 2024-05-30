@@ -24,7 +24,7 @@ public class CustomerController {
     private FindCustomerByIdInputPort findCustomerByIdInputPort;
 
     @PostMapping
-    public ResponseEntity<Void> insert(@Valid @RequestBody CustomerRequest customerRequest){
+    public ResponseEntity<Void> insert(@RequestBody CustomerRequest customerRequest){
          var customer = customerMapper.toCustomer(customerRequest);
         insertCustomerInputPort.insert(customer, customerRequest.getZipCode());
         return ResponseEntity.ok().build();
